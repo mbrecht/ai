@@ -94,3 +94,72 @@ const response = await chain.invoke({
   input: "User input from chat interface",
 });
 ```
+
+## Output Parsers
+
+### StringOutputParser
+
+The StringOutputParser will transform the response from an AI message output to a string
+
+```typescript
+import { StringOutputParser } from "@langchain/core/output_parsers";
+
+const parser = new StringOutputParser();
+
+const chain = prompt.pipe(model).pipe(parser);
+
+const response = await chain.invoke({
+  input: "User input",
+});
+```
+
+### ListOutputParser
+
+```typescript
+import { CommaSeparatedListOutputParser } from "@langchain/core/output_parsers";
+
+const prompt = ChatPromptTemplate.fromTemplate(
+  "Create a list of 5 synonyms, separated by commas, for the following word {word}",
+);
+
+const parser = new CommaSeparatedListOutputParser();
+
+const chain = prompt.pipe(model).pipe(parser);
+
+const response = await chain.invoke({
+  input: "User input",
+});
+```
+
+### StructuredOutputParser
+
+This parser transforms a response object to a javascript object defined by the user
+
+```bash
+yarn add zod
+```
+
+```typescript
+import { StructuredOutputParser } from "@langchain/core/output_parsers";
+import { z } from "zod";
+
+const prompt = ChatPromptTemplate.fromTemplate(`
+  Extract information from the following phrase.
+  Formatting Instructions: {format_instructions}
+  Phrase: {input}
+`);
+
+const schema = z.object({
+  recipe: z.string().describe("name of recipe"),
+  ingredients: z.array(z.string()).describe("ingredients"),
+});
+
+const parser = StructuredOutputParser.fromZodSchema(schema);
+
+const chain = prompt.pipe(model).pipe(parser);
+
+const response = await chain.invoke({
+  input: "The ingredients for PB&J are peanut butter, jelly, and bread",
+  format_instructions: parser.getFormatInstructions(),
+});
+```
