@@ -1,0 +1,11 @@
+{
+  "name": "ecom-chatbot",
+  "version": "1.0.0",
+  "description": "Chatbot service for an ecommerce website",
+  "repository": "https://github.com/mbrecht/ai",
+  "author": "Michael Brecht",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx nodemon"
+  }
+}
