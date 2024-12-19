@@ -1,18 +1,18 @@
 ## Starting a New Package
 
-1. Create a new repository
+### 1. Create a new repository
 
 ```bash
 yarn init
 ```
 
-{:start="2"} 2. Add langchain dependencies
+### 2. Add langchain dependencies
 
 ```bash
 yarn add langchain @langchain/openai
 ```
 
-{:start="3"} 3. Add environment variables
+### 3. Add environment variables
 
 ```dotenv
 OPENAI_API_KEY="FIND_YOURS_AND_ADD_IT_HERE" # https://platform.openai.com/api-keys
@@ -20,7 +20,7 @@ OPENAI_API_KEY="FIND_YOURS_AND_ADD_IT_HERE" # https://platform.openai.com/api-ke
 
 ## Using a model
 
-1. Create a new model object
+### 1. Create a new model object
 
 ```typescript
 import { ChatOpenAI } from "@langchain/openai";
@@ -30,7 +30,7 @@ const model = new ChatOpenAI({
 });
 ```
 
-{:start="2"} 2. Create a response
+### 2. Create a response
 
 ```typescript
 const response = await model.invoke("prompt");
