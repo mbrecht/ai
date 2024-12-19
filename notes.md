@@ -30,7 +30,7 @@ const model = new ChatOpenAI({
 });
 ```
 
-### Create a response
+### Creating a single response
 
 ```typescript
 const response = await model.invoke("prompt");
