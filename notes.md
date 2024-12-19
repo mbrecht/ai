@@ -61,3 +61,36 @@ const response = await model.batch(["prompt", "another prompt"]);
 ```typescript
 const response = await model.stream("prompt");
 ```
+
+## Prompt Templates
+
+### Generic Example
+
+```typescript
+import { ChatPromptTemplate } from "@langchain/core";
+
+const prompt = ChatPromptTemplate.fromTemplate(
+  "You can specify a custom {input}",
+);
+
+const chain = prompt.pipe(model);
+
+const response = await chain.invoke({
+  input: "prompt data from the user",
+});
+```
+
+### Chatbot Prompt Template
+
+```typescript
+const prompt = ChatPromptTemplate.fromMessages([
+  ["system", "System prompt goes here"],
+  ["human", "{input}"],
+]);
+
+const chain = prompt.pipe(model);
+
+const response = await chain.invoke({
+  input: "User input from chat interface",
+});
+```
