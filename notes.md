@@ -49,3 +49,15 @@ const model = new ChatOpenAI({
 ```typescript
 const response = await model.invoke("prompt");
 ```
+
+### Batching responses
+
+```typescript
+const response = await model.batch(["prompt", "another prompt"]);
+```
+
+### Using streams
+
+```typescript
+const response = await model.stream("prompt");
+```
