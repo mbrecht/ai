@@ -1,11 +1,21 @@
 {
   "name": "ecom-chatbot",
   "version": "1.0.0",
-  "description": "Chatbot service for an ecommerce website",
-  "repository": "https://github.com/mbrecht/ai",
-  "author": "Michael Brecht",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "npx nodemon"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.26",
+    "@langchain/openai": "^0.3.16",
+    "dotenv": "^16.4.7",
+    "langchain": "^0.3.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
   }
 }
