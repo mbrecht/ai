@@ -11,7 +11,7 @@ yarn init
 ### Add langchain dependencies
 
 ```bash
-yarn add langchain @langchain/openai
+yarn add langchain @langchain/core @langchain/openai
 ```
 
 ### Set up typescript (optional)
