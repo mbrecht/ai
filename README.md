@@ -22,6 +22,12 @@ Add typescript as a dev dependency and install type definitions for node
 yarn add -D typescript @types/node
 ```
 
+Initialize tsconfig.json
+
+```bash
+npx tsc --init --rootDir src --outDir build --esModuleInterop --resolveJsonModule --lib es6 --module commonjs --allowJs true --noImplicitAny true
+```
+
 ### Add nodemon and startup script (optional)
 
 Add nodemon as a dev dependency
