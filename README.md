@@ -67,6 +67,26 @@ touch ./nodemon.json
 
 ### Add environment variables
 
+Add `dotenv` to your project
+
+```bash
+yarn add dotenv
+```
+
+`dotenv` must be imported as soon as possible in your project. The following line should be the first line of code in your project:
+
+```typescript
+import "dotenv/config";
+```
+
+Create a `.env` file
+
+```bash
+touch ./.env
+```
+
+Add the following to `.env`:
+
 ```dotenv
 OPENAI_API_KEY="FIND_YOURS_AND_ADD_IT_HERE" # https://platform.openai.com/api-keys
 ```
