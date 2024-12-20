@@ -4,5 +4,5 @@ This guide will help give you an introduction into building more complex applica
 
 ## Table of Contents
 
-- [Getting Started](tutorial/1 - Getting Started.md)
-- [Using Models](tutorial/2 - Using Models.md)
+- [Getting Started](<tutorial/1 - Getting Started.md>)
+- [Using Models](<tutorial/2 - Using Models.md>)
