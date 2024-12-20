@@ -12,6 +12,18 @@ yarn init
 yarn add langchain @langchain/openai
 ```
 
+### Set up typescript (optional)
+
+```bash
+yarn add -D typescript @types/node
+```
+
+### Add nodemon (optional)
+
+```bash
+yarn add -D ts-node nodemon
+```
+
 ### Add environment variables
 
 ```dotenv
