@@ -2,6 +2,8 @@
 
 ### Create a new repository
 
+Initializes a package.json file. Use the -y flag to bypass setup questions.
+
 ```bash
 yarn init
 ```
@@ -14,14 +16,47 @@ yarn add langchain @langchain/openai
 
 ### Set up typescript (optional)
 
+Add typescript as a dev dependency and install type definitions for node
+
 ```bash
 yarn add -D typescript @types/node
 ```
 
-### Add nodemon (optional)
+### Add nodemon and startup script (optional)
+
+Add nodemon as a dev dependency
 
 ```bash
-yarn add -D ts-node nodemon
+yarn add -D nodemon
+```
+
+(Optional) add ts-node if using typescript
+
+```bash
+yarn add -D ts-node
+```
+
+Add the following script to your `package.json` file:
+
+```json
+"scripts": {
+  "dev": "npx nodemon"
+}
+```
+
+Create a `nodemon.json` file and add the following to it:
+
+```bash
+touch ./nodemon.json
+```
+
+```json
+{
+  "watch": ["src"],
+  "ext": ".ts,.js",
+  "ignore": [],
+  "exec": "npx ts-node ./src/index.ts"
+}
 ```
 
 ### Add environment variables
